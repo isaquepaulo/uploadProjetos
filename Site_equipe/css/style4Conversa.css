@@ -1,0 +1,393 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    font-family:'Source Sans Pro', sans-serif;
+
+    /* */
+}
+
+@font-face {
+    font-family: 'font1';
+    src: url('../font/SourceSansPro-Light.ttf') format('opentype');
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 300;
+    font-family:'font1', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: #757575;
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 50px;
+    font-family:'font1', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+
+h2{
+    font-size: 30px;
+    font-weight: 40;
+    line-height: 0;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 32px;
+    
+}
+
+
+h4{
+    color: #505050;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+p {
+    color: #757575;
+    font-size: 14px;
+    font-family: 300;
+    line-height: 29px;
+    letter-spacing: 0.5px;
+}
+
+
+#about, #project,
+#team, #contact, footer{
+    background: #ffffff;
+}
+
+
+.bg{
+    background:transparent;
+    transition: 0.2s ease;
+}
+
+.bg.scrolled{
+    background: #185ADB
+}
+
+
+
+
+
+/*Botões-------------------------------------------------------------*/
+
+.section-btn{
+    margin: 32px 0 0 0;
+    padding: 0 ;
+
+}
+
+.section-btn a{
+    color: #fff;
+    font-weight: normal;
+    line-height: 45px;
+    perspective: 1000px;
+    
+}
+
+.section-btn a span{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    padding: 2px 27px;
+    background: #185ADB;
+    border-radius: 1px;
+    transition: transform 0.3s;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+
+}
+
+.section-btn a span::before{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    background: #000;
+    border-radius: 1px;
+    padding: 2px 27px;
+    transition: background 0.3s;
+    transform: rotateX(-90deg);
+    content: attr(data-hover);
+    transform-origin: 50% 0;
+
+
+}
+
+.section-btn a:hover span,
+.section-btn a:focus span{
+    transform: rotateX(90deg) translateY(-22px);
+}
+
+
+
+
+/* Menu--------------------------------------------------------------*/
+.navbar .navbar-brand{
+    font-weight: normal;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+#nav2{
+    background: #185ADB;
+}
+
+
+
+.navbar .navbar-nav .nav-link{
+    font-weight: normal;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0.5;
+    padding: 0;
+    text-transform: uppercase;
+    transition: all-ease-in 0.4s;
+
+}
+
+.navbar .navbar-nav .nav-link:hover{
+    
+    color: #fff;
+}
+
+.navbar .navbar-nav .nav-link::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover::after{
+    width: 100%;
+    background: #fff;
+    color: #fff;
+}
+
+/* Home--------------------------------------------------------------*/
+#home{
+    display: flex;
+    align-items: center;
+    height: 117vh;
+    position: relative;
+}
+
+#home video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    height: auto;
+    width: auto;
+    transform: translateX(-50%) translateY(-50%);
+    background: cover;
+    object-fit: cover;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: -100;
+    transition: 1s opacity;
+}
+
+#home .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.75 );
+}
+
+#home h1{
+    color: #fff;
+    font-size: 7vw;
+    line-height: 1.2em;
+
+
+}
+
+#home p {
+    color: rgb(250, 250, 250, 0.7 );
+}
+
+#home .home-text {
+    z-index: 99;
+}
+
+/*Conteudo ------------------------------------------------------*/
+
+
+#conteudo{
+    position: relative;
+}
+
+#conteudo h3{
+    font-size: 14px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+
+}
+
+/*Project-------------------------------------------------------*/
+
+#project .project-item{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#project .project-item .project-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: all ease-in-out 0.4s;
+}
+
+#project .project-item:hover .project-overlay{
+    opacity: 1;
+
+
+
+}
+
+#project .project-item .project-overlay .project-info{
+    padding: 12em 0;
+
+}
+
+.project-info h1{
+    color: #fff;
+    margin: 0;
+}
+
+.project-info h3{
+    color: #d9d9d9;
+    margin-top: 0;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+}
+
+.project-item img{
+    transition: all ease-in-out 0.4s;
+}
+
+.project-item:hover img{
+    transform: scale(1.1);
+
+
+}
+
+
+/*--------Team----------------*/
+.swiper {
+  width: 100%;
+  height: 50%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide .Text h3{
+    font-weight: 200;
+    font-family:'font1', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}
+
+.swiper-slide .Text h3 span{
+    font-weight: bold;
+    font-family:'font1', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    
+}
+
+.mySwiper{
+    margin-top: 50px;
+}
+
+
+
+/*--------Contato-------------*/
+
+#contato{
+    background: url(../imagens/contact-bg.jpg) 50% 0 repeat-y fixed;
+    background-size: cover;
+    background-position:center center;
+    position: relative;
+
+}
+
+#contato .form-control{
+    border:none;
+    box-shadow: none;
+    font-size: 18px;font-weight: normal;
+    margin-top: 22px;
+}
+
+#contato .form-control:focus{
+    border-color: #d9d9d9;
+
+}
+
+#contato input{
+    height: 55px;
+    line-height: 45px;
+}
+
+
+/*----------------fotter-------------------------*/
+.footer h2 {
+    font-family:'font1', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.fm{
+    margin-top: 200px;
+}
+
+
+
+
